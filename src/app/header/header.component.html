@@ -2,10 +2,8 @@
     <span><mat-icon>pending_actions</mat-icon>EasyToDo</span>
 
     <div class="spacer"></div>
-    <a mat-button>Home</a>
-    <a routerLink="about-us" mat-button>About Us</a>
-    <a mat-raised-button color="accent">Login</a>
-    <a mat-raised-button color="accent">SignUp</a>
+    <a mat-button routerLink="/index">Home</a>
+    <a routerLink="/about-us" mat-button>About Us</a>
+    <a mat-raised-button color="accent" routerLink="/login">Login</a>
+    <a mat-raised-button color="accent" routerLink="/register">SignUp</a>
 </mat-toolbar>
-
-<router-outlet></router-outlet>
