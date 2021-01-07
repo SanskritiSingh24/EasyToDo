@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserServices } from '../user.services';
 
 @Component({
   selector: 'app-index',

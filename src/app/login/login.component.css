@@ -1,0 +1,85 @@
+*{
+    margin-top: 5px;
+    margin-bottom: 21px;
+    
+        padding-right: 15px;
+        padding-left: 15px;
+}
+
+.container{
+    background-image:url('/assets/images/img1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+    opacity: 1;
+}
+
+h3{
+    font-size: 30px;
+    font-weight:bold;
+    color: black;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.glyphicon-log-in{
+    font-size: 20px;
+    color: black;
+    float: right;
+    margin-top: 20px;
+    font-weight:bold;
+}
+
+
+.col-md-8{
+    margin-top: 80px;
+    box-shadow: -1px 1px 60px 10px rgb(240, 235, 235);
+    background: #ffffff;
+    opacity: 0.9;
+}
+ .label{
+    font-weight:bold;
+    margin-top: 15px;
+    color: rgb(1, 1, 1);
+    font-size: 19px;
+ }
+
+ .form-control{
+     background: transparent;
+     border-radius: 0px;
+     border: 20px;
+     border-bottom: 1px solid white;
+     font-size: 18px;
+     margin-top: 15px;
+     height: 40px;
+     color: white;
+ }
+ 
+ input[type="checkbox"]{
+     margin-top: 15px;
+     width: 15px;
+     height: 15px;
+ }
+
+ small{
+     font-size: 18px;
+     color: black;
+     font-weight:bold;
+ }
+
+
+.btn-info{
+    margin-top:20 ;
+    font-size: 18px;
+    width: 120px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.btn-danger{
+    margin-top:20 ;
+    font-size: 18px;
+    width: 120px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
