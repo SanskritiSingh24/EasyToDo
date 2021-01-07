@@ -1,13 +1,19 @@
 <div class="container">
     <div class="row">
+
+      <!-- Left side spacing -->
        <div class="col-md-7">
           <h1 class="text-left">EasyTodo Registration</h1>
           <p class="text-left">Now remembrance is easy with EasyTodo! Just a couple of clicks to prepare your list
               and get to work. Register Now.
           </p>
         </div>
+        <!-- End of left spacing -->
+
+        <!-- Start of registration form -->
         <div class="col-md-5">
-            <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <form (ngSubmit)="onSubmit()" #register="ngForm">
+
               <div class="row">
                   <div class="col-md-6">
                       <h3 class="text-left">Registration Form</h3>
@@ -16,7 +22,10 @@
                       <span class="glyphicon glyphicon-pencil"></span>
                   </div>
                 </div>
+
                   <hr>
+
+                  <!-- Start of registration credentials -->
                   <div class="row">
                     <label class="label col-md-3 control-label">E-Mail</label>
                     <div class="col-md-9">
@@ -70,10 +79,14 @@
                         </select>
                     </div>
                   </div>
-                  <button class="btn btn-info" type="submit" [disabled]="!f.valid">Submit</button>
+                  <!-- End of registration credentials -->
+                  
+                  <button class="btn btn-info" type="submit" [disabled]="!register.valid">Submit</button>
                   <button class="btn btn-danger" type="submit">Cancel</button>
                 </form>
               </div>
+              <!-- End of registration form -->
+
           </div>
   </div>
   

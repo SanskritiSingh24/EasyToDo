@@ -10,7 +10,7 @@ import { UserServices } from '../user.services';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  @ViewChild('f') signupForm:NgForm;
+  @ViewChild('register') signupForm:NgForm;
   genders=['Male','Female'];
 
   constructor(private userService:UserServices, private route:Router) { }

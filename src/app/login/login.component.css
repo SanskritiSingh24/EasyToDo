@@ -30,6 +30,11 @@ h3{
     font-weight:bold;
 }
 
+.p{
+    font-size: 15px;
+    color: red;
+}
+
 
 .col-md-8{
     margin-top: 80px;
@@ -52,7 +57,7 @@ h3{
      font-size: 18px;
      margin-top: 15px;
      height: 40px;
-     color: white;
+     color:black;
  }
  
  input[type="checkbox"]{

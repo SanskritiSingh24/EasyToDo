@@ -1,8 +1,14 @@
 <div class="container">
     <div class="row">
+
+        <!-- Left Spacing -->
        <div class="col-md-2">
         </div>
+        <!-- End of Left Spacing -->
+
+        <!-- Starting of login form -->
         <div class="col-md-8">
+            <form (ngSubmit)="onSubmit()" #login="ngForm"> 
               <div class="row">
                   <div class="col-md-6">
                       <h3 class="text-left">Login</h3>
@@ -11,27 +17,40 @@
                       <span class="glyphicon glyphicon-log-in"></span>
                   </div>
                 </div>
+                <p style="color:red;font-size:15px;">{{ message }}</p>
+
                   <hr>
+
+                  <!-- Starting of login credentials -->
                   <div class="row">
                     <label class="label col-md-3 control-label">Username</label>
                     <div class="col-md-9">
-                        <input type="email" class="form-control" name="email" placeholder="E-mail">
+                        <input type="email" class="form-control" ngModel name="email" placeholder="E-mail">
+                        <!-- <p>{{ loginname }}</p> -->
                     </div>
                   </div>
 
                   <div class="row">
                     <label class="label col-md-3 control-label">Password</label>
                     <div class="col-md-9">
-                        <input type="text" name="password" class="form-control" placeholder="Password" required>
-                        <input type="checkbox"><small> Remember Me</small>
+                        <input type="text" name="password" ngModel class="form-control" placeholder="Password">
+                        <input type="checkbox" name="checkbox" ngModel><small> Remember Me</small>
                     </div>
                   </div>
 
-                  <div class="btn btn-info" type="submit">Submit</div>
+                  <div class="btn btn-info" type="submit" (click)="onSubmit()">Submit</div>
                   <div class="btn btn-danger" type="submit">Back</div>
+                  <!-- Ending of login credentials -->
+
+                </form>
               </div>
+              <!-- Ending of login form -->
+
+              <!-- Right Spacing -->
               <div class="col-md-2">
               </div>
+              <!-- End of right spacing -->
+
           </div>
   </div>
   
