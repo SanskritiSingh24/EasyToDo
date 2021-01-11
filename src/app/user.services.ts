@@ -3,8 +3,8 @@ import { User } from "./user.model";
 export class UserServices{
 
     private registeredUser: User[] =[
-        new User('abc@d.com','abc@123','abc@123','Male','A'),
-        new User('test@d.com','test@123','test@123','Male','A')
+        new User('sanskriti@d.com','abc@123','abc@123','Female','India'),
+        new User('varsha@d.com','test@123','test@123','Female','India')
       ];
 
       showRegisteredUser(){

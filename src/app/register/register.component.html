@@ -29,16 +29,16 @@
                   <div class="row">
                     <label class="label col-md-3 control-label">E-Mail</label>
                     <div class="col-md-9">
-                        <input type="email" class="form-control"
-                        ngModel name="email" placeholder="E-mail">
+                        <input type="email" class="form-control" email
+                        ngModel name="email" required placeholder="E-mail">
                     </div>
                   </div>
 
                   <div class="row">
                     <label class="label col-md-3 control-label">Password</label>
                     <div class="col-md-9">
-                        <input type="text" name="password" class="form-control"
-                        ngModel placeholder="Password" required>
+                        <input type="password" name="password" class="form-control"
+                        ngModel placeholder="Password" [(ngModel)]="pwd" required>
                         <input type="checkbox"><small> Remember Me</small>
                     </div>
                   </div>
@@ -46,8 +46,9 @@
                   <div class="row">
                     <label class="label col-md-3 control-label"> Re-Password</label>
                     <div class="col-md-9">
-                        <input type="text" name="rpassword" class="form-control"
+                        <input type="password" name="rpassword" (keyup)="onKeyUp($event)" class="form-control"
                         ngModel placeholder="Confirm Password" required>
+                        <p [ngStyle]="{color:i==true ? 'green':'red'}">{{text}}</p>
                     </div>
                   </div>
                 
@@ -71,11 +72,11 @@
                     <label class="label col-md-3 control-label">Country</label>
                     <div class="col-md-9">
                         <select  class="form-control" name="country" ngModel>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>E</option>
+                            <option>Australia</option>
+                            <option>Britain</option>
+                            <option>Canada</option>
+                            <option>India</option>
+                            <option>US</option>
                         </select>
                     </div>
                   </div>
