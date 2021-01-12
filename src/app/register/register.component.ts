@@ -108,7 +108,6 @@ export class RegisterComponent implements OnInit {
         console.log(this.userService.showRegisteredUser());
      }
      //end of form submission
-
     
      //to clear and reset form using cancel
     clearForm(){
