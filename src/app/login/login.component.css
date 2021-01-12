@@ -7,11 +7,16 @@
 }
 
 .container{
-    background-image:url('/assets/images/img1.jpg');
+    background-image:url('/assets/images/img2.jpg');
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Times New Roman', Times, serif;
     opacity: 1;
+}
+
+.btn btn-info
+{
+    align-content: center;
 }
 
 h3{
@@ -39,7 +44,7 @@ h3{
 .col-md-8{
     margin-top: 80px;
     box-shadow: -1px 1px 60px 10px rgb(240, 235, 235);
-    background: #ffffff;
+    background: #3f51b5;
     opacity: 0.9;
 }
  .label{
