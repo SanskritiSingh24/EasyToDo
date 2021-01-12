@@ -39,7 +39,7 @@
                     <div class="col-md-9">
                         <input type="password" name="password" class="form-control"
                         ngModel placeholder="Password" [(ngModel)]="pwd" required>
-                        <input type="checkbox"><small> Remember Me</small>
+                        <input type="checkbox" (click)="showPassword()"><small> Show Password</small> 
                     </div>
                   </div>
 
@@ -48,7 +48,7 @@
                     <div class="col-md-9">
                         <input type="password" name="rpassword" (keyup)="onKeyUp($event)" class="form-control"
                         ngModel placeholder="Confirm Password" required>
-                        <p [ngStyle]="{color:i==true ? 'green':'red'}">{{text}}</p>
+                        <p [ngStyle]="{color:i==true ? 'green':'red'}">{{text}}</p> 
                     </div>
                   </div>
                 
@@ -83,7 +83,7 @@
                   <!-- End of registration credentials -->
                   
                   <button class="btn btn-info" type="submit" [disabled]="!register.valid">Submit</button>
-                  <button class="btn btn-danger" type="submit">Cancel</button>
+                  <div class="btn btn-danger" (click)="clearForm()">Cancel</div>
                 </form>
               </div>
               <!-- End of registration form -->
