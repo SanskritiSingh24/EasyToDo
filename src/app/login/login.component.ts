@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserServices } from '../user.services';
+import { HttpBackend } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
      console.log(this.loginForm);
 
+
     //checking the credentials
     const un=this.loginForm.value.email;
     const pwd=this.loginForm.value.password;
@@ -33,6 +35,7 @@ export class LoginComponent implements OnInit {
         if(userArray[this.i].password==pwd){
           this.bypassLogin=true;
           this.route.navigate(['/index']);
+          
         }
         else
           this.message="Invalid password!";
@@ -42,6 +45,11 @@ export class LoginComponent implements OnInit {
       this.i++;
     }
 
+  }
+
+  onBack()
+  {
+    this.route.navigate(['/index']); //navigates to index page on clicking back button
   }
 
 

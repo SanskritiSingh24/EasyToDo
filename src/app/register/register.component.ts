@@ -11,10 +11,12 @@ import { UserServices } from '../user.services';
 })
 export class RegisterComponent implements OnInit {
   @ViewChild('register') signupForm:NgForm;
-  genders=['Male','Female'];
+  genders=['Male','Female','Other'];
   pwd="";
   i:boolean;
   text = ''; 
+  hide = true;
+  
 
   constructor(private userService:UserServices, private route:Router) { }
 
