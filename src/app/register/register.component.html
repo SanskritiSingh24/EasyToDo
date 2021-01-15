@@ -41,9 +41,10 @@
                         ngModel placeholder="Password" [(ngModel)]="pwd" required>
                         <i class="material-icons" matSuffix (click) = "hide = !hide">
                           {{hide ? 'visibility' : 'visibility_off'}}
-                        </i>
-                            
+                        </i>      
                      </div>
+                        <input type="checkbox" (click)="showPassword()"><small> Show Password</small> 
+                    </div>
                   </div>
 
                   <div class="row">
@@ -55,6 +56,7 @@
                             {{hide ? 'visibility' : 'visibility_off'}}
                           </i>
                         <p [ngStyle]="{color:i==true ? 'green':'red'}">{{text}}</p>
+                        <p [ngStyle]="{color:i==true ? 'green':'red'}">{{text}}</p> 
                     </div>
                   </div>
                 
@@ -90,7 +92,7 @@
                   <!-- End of registration credentials -->
                   
                   <button class="btn btn-info" type="submit" [disabled]="!register.valid">Submit</button>
-                  <button class="btn btn-danger" type="submit">Cancel</button>
+                  <div class="btn btn-danger" (click)="clearForm()">Cancel</div>
                 </form>
               </div>
               <!-- End of registration form -->

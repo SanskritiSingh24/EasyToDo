@@ -16,6 +16,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserServices } from './user.services';
+import { EventsComponent } from './index/events/events.component';
+import { TodoListComponent } from './index/todo-list/todo-list.component';
+import { TodoComponent } from './index/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { UserServices } from './user.services';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    EventsComponent,
+    TodoListComponent,
+    TodoComponent,
   ],
   imports: [
     BrowserModule,

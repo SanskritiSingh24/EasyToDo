@@ -14,8 +14,12 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register(){
-    this.router.navigate(['register'],{relativeTo:this.route})
+  // register(){
+  //   this.router.navigate(['register'],{relativeTo:this.route});
+  // }
+
+  showEvents(){
+    this.router.navigate(['modal'],{relativeTo:this.route});
   }
 
 }
