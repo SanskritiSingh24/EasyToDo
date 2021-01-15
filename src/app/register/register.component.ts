@@ -11,10 +11,11 @@ import { UserServices } from '../user.services';
 })
 export class RegisterComponent implements OnInit {
   @ViewChild('register') signupForm:NgForm;
-  genders=['Male','Female'];
+  genders=['Male','Female','Other'];
   pwd="";
   i:boolean;
   text = ''; 
+  hide = true;
   j=0;
   capLetters=0;
   smallLetters=0;

@@ -27,18 +27,22 @@
 
                   <!-- Start of registration credentials -->
                   <div class="row">
-                    <label class="label col-md-3 control-label">E-Mail</label>
-                    <div class="col-md-9">
-                        <input type="email" class="form-control" email
-                        ngModel name="email" required placeholder="E-mail">
+                      <label class="label col-md-3 control-label">E-Mail</label>
+                      <div class="col-md-9">
+                          <input type="email" class="form-control" email
+                          ngModel name="email" required placeholder="example@mail.com" required>
+                      </div>
                     </div>
-                  </div>
 
                   <div class="row">
                     <label class="label col-md-3 control-label">Password</label>
                     <div class="col-md-9">
-                        <input type="password" name="password" class="form-control"
+                        <input type="password" [type]="hide ? 'password' : 'text' " name="password" class="form-control"
                         ngModel placeholder="Password" [(ngModel)]="pwd" required>
+                        <i class="material-icons" matSuffix (click) = "hide = !hide">
+                          {{hide ? 'visibility' : 'visibility_off'}}
+                        </i>      
+                     </div>
                         <input type="checkbox" (click)="showPassword()"><small> Show Password</small> 
                     </div>
                   </div>
@@ -46,8 +50,12 @@
                   <div class="row">
                     <label class="label col-md-3 control-label"> Re-Password</label>
                     <div class="col-md-9">
-                        <input type="password" name="rpassword" (keyup)="onKeyUp($event)" class="form-control"
+                        <input type="password" [type]="hide ? 'password' : 'text' " name="rpassword" (keyup)="onKeyUp($event)" class="form-control"
                         ngModel placeholder="Confirm Password" required>
+                        <i class="material-icons" matSuffix (click) = "hide = !hide">
+                            {{hide ? 'visibility' : 'visibility_off'}}
+                          </i>
+                        <p [ngStyle]="{color:i==true ? 'green':'red'}">{{text}}</p>
                         <p [ngStyle]="{color:i==true ? 'green':'red'}">{{text}}</p> 
                     </div>
                   </div>
@@ -56,8 +64,9 @@
                   <div class="row">
                     <label class="label col-md-3 control-label">Gender</label>
                     <div class="col-md-9">
-                        <input type="radio" name="gender" ngModel value="male"><small> Male</small>
-                        <input type="radio" name="gender" ngModel value="female"><small> Female</small>
+                        <input type="radio" required name="gender" ngModel value="male"><small>Male</small>
+                        <input type="radio" required name="gender" ngModel value="female"><small>Female</small>
+                        <input type="radio" required name="gender" ngModel value="other"><small>Other</small>
                     </div>
                   </div>
 
@@ -71,7 +80,7 @@
                   <div class="row">
                     <label class="label col-md-3 control-label">Country</label>
                     <div class="col-md-9">
-                        <select  class="form-control" name="country" ngModel>
+                        <select  class="form-control" name="country" ngModel required>
                             <option>Australia</option>
                             <option>Britain</option>
                             <option>Canada</option>
