@@ -11,7 +11,7 @@ import { UserServices } from '../user.services';
 })
 export class RegisterComponent implements OnInit {
   @ViewChild('register') signupForm:NgForm;
-  genders=['Male','Female','Other'];
+  genders=['Male','Female'];
   pwd="";
   i:boolean;
   text = ''; 
@@ -93,7 +93,6 @@ export class RegisterComponent implements OnInit {
 
 
   showPassword(){ }
-
 
   //form submission
   onSubmit(){

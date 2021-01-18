@@ -6,6 +6,7 @@ export class UserServices{
         new User('sanskriti@d.com','abc@123','abc@123','Female','India'),
         new User('varsha@d.com','test@123','test@123','Female','India')
       ];
+      options=false;
 
       showRegisteredUser(){
         return this.registeredUser.slice()
@@ -13,5 +14,12 @@ export class UserServices{
 
       addRegisteredUser(newUser:User){
         this.registeredUser.push(newUser);
+    }
+
+    editOptions(){
+      if(this.options==false)
+        return "Login";
+      else
+        return "Logout";
     }
 }

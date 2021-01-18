@@ -1,6 +1,6 @@
 *{
     margin-top: 5px;
-    margin-bottom: 21px;
+    margin-bottom: 17px;
     
         padding-right: 15px;
         padding-left: 15px;
@@ -49,10 +49,15 @@ h3{
 }
  .label{
     font-weight:bold;
-    margin-top: 15px;
+    margin-top: 25px;
     color: rgb(1, 1, 1);
     font-size: 19px;
  }
+
+ .material-icons{
+    margin-top: 25px;
+    font-size: 20px;
+}
 
  .form-control{
      background: transparent;
@@ -66,7 +71,7 @@ h3{
  }
  
  input[type="checkbox"]{
-     margin-top: 15px;
+     margin-top: 5px;
      width: 15px;
      height: 15px;
  }

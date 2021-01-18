@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserServices } from '../user.services';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  //@Input('options') option:boolean;
+  //option="";
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private userService:UserServices) { 
+    //this.option=this.userService.editOptions();
   }
 
+  ngOnInit(){
+   // this.option=this.userService.editOptions();
+    //console.log("in header: " +this.option);
+  }
+
+  
 }

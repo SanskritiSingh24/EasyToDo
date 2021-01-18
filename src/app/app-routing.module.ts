@@ -8,7 +8,7 @@ import { TodoListComponent } from './index/todo-list/todo-list.component';
 import { TodoComponent } from './index/todo/todo.component';
 
 const routes: Routes = [
-  { path: '', component: IndexComponent, pathMatch:'full' },
+  { path: '', redirectTo:'/index', pathMatch:'full' },
   { path: 'index', component: IndexComponent,children:[
     { path: '', component: TodoListComponent },
     { path: 'todo', component:TodoComponent},
