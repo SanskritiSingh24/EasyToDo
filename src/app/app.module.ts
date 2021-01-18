@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
@@ -27,8 +25,8 @@ import { TodoComponent } from './index/todo/todo.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent,
     AboutUsComponent,
+    RegisterComponent,
     EventsComponent,
     TodoListComponent,
     TodoComponent,
@@ -36,11 +34,13 @@ import { TodoComponent } from './index/todo/todo.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     AppRoutingModule,
+    
   ],
   providers: [UserServices],
   bootstrap: [AppComponent]
