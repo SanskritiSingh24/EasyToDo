@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   i=0;
   bypassLogin=false;
   message="";
+  hide= true;
 
   constructor(private userService:UserServices,private route:Router) { }
 
