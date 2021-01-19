@@ -1,8 +1,8 @@
-import { ViewChild } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Input, ViewChild } from '@angular/core';
+import { Component, OnInit,EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
-import { UserServices } from '../user.services';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserServices } from '../../user.services';
 import { HttpBackend } from '@angular/common/http';
 import { Output } from '@angular/core';
 
@@ -17,9 +17,10 @@ export class LoginComponent implements OnInit {
   bypassLogin=false;
   hide = true;
   message="";
-  //@Output() options:boolean;
+  //option:boolean=true;
+  //@Output() optionEvent=new EventEmitter<boolean>();
 
-  constructor(private userService:UserServices,private route:Router) { }
+  constructor(private userService:UserServices,private route:Router, private router:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -37,8 +38,9 @@ export class LoginComponent implements OnInit {
       if(userArray[this.i].username==un){
         if(userArray[this.i].password==pwd){
           this.bypassLogin=true;
-          this.route.navigate(['/index']);
-          //this.options=true;
+          //this.optionEvent.emit(this.option);
+          this.userService.activateEmitter.next(true); //for login/logout
+          this.route.navigate(['../','index',this.i],{relativeTo:this.router});
         }
         else
           this.message="Invalid password!";
@@ -47,9 +49,9 @@ export class LoginComponent implements OnInit {
         this.message="Invalid user!";
       this.i++;
     }
-
+    //console.log(this.option);
   }
-
+ 
   onBack()
   {
     this.route.navigate(['/index']); //navigates to index page on clicking back button

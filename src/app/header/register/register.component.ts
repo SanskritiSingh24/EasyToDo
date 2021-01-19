@@ -1,8 +1,8 @@
 import { Component, DoCheck, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from '../user.model';
-import { UserServices } from '../user.services';
+import { User } from '../../user.model';
+import { UserServices } from '../../user.services';
 
 @Component({
   selector: 'app-register',

@@ -4,6 +4,9 @@
     <div class="spacer"></div>
     <a mat-button routerLink="/index">Home</a>
     <a routerLink="/about-us" mat-button>About Us</a>
-    <a mat-button routerLink="/login">Login</a>
-    <a mat-button  routerLink="/register">SignUp</a>
+    <a mat-button *ngIf="!option" routerLink="/register">SignUp</a>
+    <!-- <a mat-button (optionEvent)="loginCheck($event)" routerLink="/login">{{userOption}}</a> -->
+    <a *ngIf="!option" mat-button [routerLink]="['/login']">Login</a>
+    <a *ngIf="option" mat-button  routerLink="/account">Account</a>
+    <a *ngIf="option" mat-button (click)="logout()">Logout</a>
 </mat-toolbar>
