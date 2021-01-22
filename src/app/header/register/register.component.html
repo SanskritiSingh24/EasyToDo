@@ -55,11 +55,11 @@
                     <label class="label col-md-3 control-label"> Re-Password</label>
                     <div class="col-md-9">
                       <div class="col-xs-10">
-                        <input type="password" [type]="hide ? 'password' : 'text' " name="rpassword" (keyup)="onKeyUp($event)" class="form-control"
+                        <input type="password" [type]="hide1 ? 'password' : 'text' " name="rpassword" (keyup)="onKeyUp($event)" class="form-control"
                         ngModel placeholder="Confirm Password" required>
                       </div>
                       <div class="col-xs-2">
-                        <span style="cursor: pointer;" class="material-icons" matSuffix (click) = "hide = !hide">
+                        <span style="cursor: pointer;" class="material-icons" matSuffix (click) = "hide1 = !hide1">
                             {{hide ? 'visibility' : 'visibility_off'}}
                         </span>
                       </div>

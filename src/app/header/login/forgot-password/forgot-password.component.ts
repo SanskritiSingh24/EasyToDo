@@ -13,6 +13,7 @@ import { ValidationServices } from 'src/app/validation.services';
 export class ForgotPasswordComponent implements OnInit {
   @ViewChild ('forgotPassword') passwordForm:NgForm;
   hide = true;
+  hide1=true;
   //users:User;
   i:number=0;
   message="";

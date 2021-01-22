@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
   i:boolean;
   text = ''; 
   hide = true;
+  hide1=true;
   j=0;
   capLetters=0;
   smallLetters=0;

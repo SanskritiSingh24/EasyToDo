@@ -47,12 +47,16 @@ export class LoginComponent implements OnInit {
         this.message="Invalid user!";
       this.i++;
     }
-    //console.log(this.option);
+    
   }
  
   onBack()
   {
     this.route.navigate(['/index']); //navigates to index page on clicking back button
+  }
+
+  rememberCheck(){
+    console.log("hi");
   }
 
 

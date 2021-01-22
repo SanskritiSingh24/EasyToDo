@@ -30,6 +30,8 @@ export class AccountComponent implements OnInit {
 
   //updates user details
   onSubmit(){
+      const username=this.userLogged.username;
+    //console.log("username: "+username);
       const un=this.accountForm.value.email;
       const pwd=this.userLogged.password;
       const rpwd=this.userLogged.repwd;
@@ -39,7 +41,7 @@ export class AccountComponent implements OnInit {
       this.userService.updateUserDetails(newRegisteredUser);
       //console.log(un);
       //console.log(this.userLogged.username);
-      if(un!=this.username){
+      if(un!=username){
         this.userService.activateEmitter.next(false);
         this.route.navigate(['/login'],{relativeTo:this.router});
       }
