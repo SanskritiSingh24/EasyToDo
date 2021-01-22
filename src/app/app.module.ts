@@ -18,6 +18,7 @@ import { EventsComponent } from './index/events/events.component';
 import { TodoListComponent } from './index/todo-list/todo-list.component';
 import { TodoComponent } from './index/todo/todo.component';
 import { AccountComponent } from './header/account/account.component';
+import { ForgotPasswordComponent } from './header/login/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AccountComponent } from './header/account/account.component';
     TodoListComponent,
     TodoComponent,
     AccountComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

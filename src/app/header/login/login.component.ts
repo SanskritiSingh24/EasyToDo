@@ -26,9 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-     console.log(this.loginForm);
-
-
+    // console.log(this.loginForm);
     //checking the credentials
     const un=this.loginForm.value.email;
     const pwd=this.loginForm.value.password;
@@ -40,6 +38,7 @@ export class LoginComponent implements OnInit {
           this.bypassLogin=true;
           //this.optionEvent.emit(this.option);
           this.userService.activateEmitter.next(true); //for login/logout
+          this.userService.recentUser=this.i;
           this.route.navigate(['../','index',this.i],{relativeTo:this.router});
         }
         else

@@ -1,0 +1,113 @@
+*{
+    margin-top: 5px;
+    margin-bottom: 6.5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.container{
+    background-color: gray;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+} 
+
+h1{
+    font-size: 40px;
+    color: white;
+    margin-top: 250px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p{
+    font-size: 18px;
+    color: white;
+}
+
+h3{
+    font-size: 30px;
+    margin-top: 10px;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.glyphicon-list-alt{
+    font-size: 30px;
+    color: white;
+    float: right;
+    margin-top: 10px;
+}
+.glyphicon-user{
+    font-size: 250px;
+    color: white;
+     float: center;  
+     margin-top: 50px; 
+    margin-left: 40px; 
+} 
+
+.col-md-6{
+    margin-top: 30px;
+    box-shadow: -10px 1px 60px 10px black;
+    background: black;
+    opacity: 0.7;
+}
+
+.col-md-3{
+    margin-top: 140px;
+    margin-left: 10px;
+    height: 370px;
+    width: 370px;
+    box-shadow: -10px 1px 60px 10px black;
+    background-color:black;
+    border-radius: 50%;
+    border-color: red;
+    opacity: 0.7;
+
+}
+
+ .label{
+    font-weight:normal;
+    margin-top: 22px;
+    color: white;
+    font-size: 19px;
+ }
+
+ .form-control{
+     background: transparent;
+     border-radius: 0px;
+     border: 0px;
+     border-bottom: 1px solid white;
+     font-size: 18px;
+     margin-top: 15px;
+     height: 40px;
+     color: white;
+ }
+
+
+option{
+    color: gray;
+}
+
+.btn-info{
+    margin-top:20 ;
+    font-size: 18px;
+    width: 120px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.btn-danger{
+    margin-top:20 ;
+    font-size: 18px;
+    width: 120px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.btn-primary{
+    margin-top:20 ;
+    font-size: 18px;
+    width: 120px;
+    margin-left: 80px;
+    margin-bottom: 20px;   
+}

@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RoutesRecognized } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UserServices } from '../user.services';
 
@@ -10,7 +10,7 @@ import { UserServices } from '../user.services';
 })
 export class HeaderComponent implements OnInit,OnDestroy {
   //userOption:boolean=false;
-  //user:number;
+  user:number;
   option=false;
   private activatedSub:Subscription;
   constructor(private userService:UserServices,private route:ActivatedRoute,private router:Router) { 
@@ -20,8 +20,15 @@ export class HeaderComponent implements OnInit,OnDestroy {
     //this.option=this.userService.options;
     this.activatedSub=this.userService.activateEmitter.subscribe(didActivate=>{
       this.option=didActivate;
-    })
-    console.log("in header: ");
+      // if(this.option){ this.route.params.subscribe(
+      //   (params:Params)=>{
+      //     this.user = +params['id'];
+      //   }
+      // );}
+    });
+    //console.log({relativeTo:this.route});
+    //console.log(this.route.snapshot.data);
+    //console.log("in header: ");
   }
 
   ngOnDestroy(){
@@ -33,6 +40,22 @@ export class HeaderComponent implements OnInit,OnDestroy {
     this.router.navigate(['index']);
   }
 
+
+  navigationAccount(){
+    //  this.route.params.subscribe(
+    //      (params:Params)=>{
+    //         this.user = +params['id'];
+    //       });
+    // this.router.events.subscribe((data) => {
+    //   if (data instanceof RoutesRecognized) {
+    //     this.user = data.state.root.firstChild.data;
+    //   }
+    // });
+    this.user=this.userService.recentUserLogin();
+    console.log(this.user);
+    this.router.navigate(['account'],{relativeTo:this.route});
+   
+   }
   //  loginCheck(b:boolean){
   //    this.userOption=b;
   //    console.log("in header: "+this.userOption);

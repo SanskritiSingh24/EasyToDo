@@ -7,14 +7,22 @@ import { LoginComponent } from './header/login/login.component';
 import { TodoListComponent } from './index/todo-list/todo-list.component';
 import { TodoComponent } from './index/todo/todo.component';
 import { AccountComponent } from './header/account/account.component';
+import { ForgotPasswordComponent } from './header/login/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/index', pathMatch:'full' },
   { path: 'index', component: IndexComponent,children:[
     { path: '', component: TodoListComponent },
     { path: ':id', component: TodoListComponent },
-    { path: 'todo', component:TodoComponent},
+    { path: ':id/todo', component:TodoComponent}
+    //{ path: ':id/account', component: AccountComponent }
   ]},
+  { path:'about-us', component: AboutUsComponent },
+  { path: 'login', component: LoginComponent},
+  { path: 'login/forgot-password', component:ForgotPasswordComponent},
+  { path: 'account', component: AccountComponent },
+  { path: 'register', component: RegisterComponent }
+];
 
 
   // { path: 'recipes', component: RecipesComponent,children:[
@@ -24,13 +32,6 @@ const routes: Routes = [
   //   { path: ':id/edit', component:RecipeEditComponent}
 
   // ] },
-
-
-  { path:'about-us', component: AboutUsComponent },
-  { path:'account', component: AccountComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
-];
 
 
 @NgModule({
