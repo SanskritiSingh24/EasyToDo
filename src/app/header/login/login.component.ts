@@ -1,10 +1,8 @@
-import { Input, ViewChild } from '@angular/core';
-import { Component, OnInit,EventEmitter } from '@angular/core';
+import { ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserServices } from '../../user.services';
-import { HttpBackend } from '@angular/common/http';
-import { Output } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -26,10 +24,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    // console.log(this.loginForm);
+     console.log(this.loginForm.value);
     //checking the credentials
     const un=this.loginForm.value.email;
     const pwd=this.loginForm.value.password;
+    console.log(un,pwd);
     const userArray=this.userService.showRegisteredUser();
     const l=userArray.length;
     while(this.i<l){

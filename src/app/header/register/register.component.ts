@@ -1,6 +1,7 @@
 import { Component, DoCheck, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ValidationServices } from 'src/app/validation.services';
 import { User } from '../../user.model';
 import { UserServices } from '../../user.services';
 
@@ -22,8 +23,9 @@ export class RegisterComponent implements OnInit {
   num=0;
   character='';
   specialLetters=0;
+  res:boolean;
 
-  constructor(private userService:UserServices, private route:Router) { }
+  constructor(private userService:UserServices, private route:Router, private valid:ValidationServices) { }
 
   ngOnInit() {
    // console.log('Form changed!');
@@ -40,59 +42,24 @@ export class RegisterComponent implements OnInit {
 
   onKeyUp(x) { 
     //checking the password strength  
-    if(this.pwd.length<8)
-      alert('Password should be minimum 8 characters!');
+    this.res=this.valid.passwordValidation(this.pwd);
+    if(this.res==false)
+        alert('Password should be minimum 8 characters and must contain 1 numeric, 1 special, 1 upper and 1 lower case letter!');
     else{
-          while(this.j<this.pwd.length){
-               this.character=this.pwd[this.j];
-               //console.log(this.character);
-               if (this.character.match('[0-9]')){
-                  // alert('character is numeric');
-                  this.num++;
-                  //console.log(this.num);
-                  //[$-/:-?{-~!"^_@`\[\]]
-               }else{
-                   if(this.character.match('[-@_"$:]')){
-                      this.specialLetters++;
-                      //console.log(this.character,this.specialLetters);
-                    }else{
-                          if(this.character==this.pwd[this.j].toUpperCase()){
-                            this.capLetters+=1;
-                           // console.log(this.character,this.capLetters);
-                          }
-                          if(this.character==this.pwd[this.j].toLowerCase()){
-                              this.smallLetters++;
-                             // console.log(this.smallLetters);
-                          }
-                          // console.log(this.capLetters);
-                     }
-                }
-           this.j++;
-       }
-       if(this.capLetters==0 || this.smallLetters==0 || this.num==0 || this.specialLetters==0){
-             alert('Password should contain atleast 1 uppercase, 1 lowercase, 1 numeric and 1 special character - @ _ " $ or :');     
+        //checking if password and confirm password matches
+        if(x.target.value==this.pwd ){
+          this.i=true;
+          this.text="Passwords matched!";
+          if(this.i==true){setTimeout(()=> {
+            this.text="";
+          },2000);}
+        }else{
+          this.text="Passwords do not match!";
+          this.i=false;
         }
-       console.log(this.capLetters,this.smallLetters,this.num,this.specialLetters);
-    }
-    //end of passsword strength checking
-
-
-    //checking if password and confirm password matches
-    if(x.target.value==this.pwd ){
-      this.i=true;
-      this.text="Passwords matched!";
-      if(this.i==true){setTimeout(()=> {
-        this.text="";
-       },2000);}
-    }else{
-      this.text="Passwords do not match!";
-      this.i=false;
-    }
-  }
+      }
   //end of password matching
-
-
-  showPassword(){ }
+  }
 
   //form submission
   onSubmit(){

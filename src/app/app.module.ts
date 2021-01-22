@@ -19,6 +19,7 @@ import { TodoListComponent } from './index/todo-list/todo-list.component';
 import { TodoComponent } from './index/todo/todo.component';
 import { AccountComponent } from './header/account/account.component';
 import { ForgotPasswordComponent } from './header/login/forgot-password/forgot-password.component';
+import { ValidationServices } from './validation.services';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { ForgotPasswordComponent } from './header/login/forgot-password/forgot-p
     AppRoutingModule,
     
   ],
-  providers: [UserServices],
+  providers: [UserServices,ValidationServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
